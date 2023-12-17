@@ -1,6 +1,6 @@
 <template>
     <div>
-      <label>{{ label }}</label>
+      <label>{{ label }}:</label>
       <button @click="decrement">-</button>
       <input type="number" :value="modelValue" readonly>
       <button @click="increment">+</button>
