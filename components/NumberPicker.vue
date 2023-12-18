@@ -3,7 +3,7 @@
     <div class="col-4 text-end">
       <label class="align-middle fs-4">{{ label }}:</label>
     </div>
-    <div class="col-2">
+    <div class="col-2 text-end">
       <button @click="decrement" type="button" class="btn btn-primary">
         <i class="bi bi-dash-circle"></i>
       </button>
