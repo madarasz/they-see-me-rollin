@@ -41,7 +41,7 @@ export default {
         return {
             failDice: [
             {
-                    label: '',
+                    label: 'reroll',
                     value: 1
                 },
                 {
@@ -51,7 +51,7 @@ export default {
             ],
             successDice: [
                 {
-                    label: '',
+                    label: 'mod',
                     value: 4
                 }
             ],

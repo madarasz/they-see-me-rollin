@@ -1,6 +1,7 @@
 <template>
     <div class="dice face">
         <span v-for="index in value" :key="index" class="pip"></span>
+        <div class="dice-label">{{ label }}</div>
     </div>
 </template>
 
@@ -31,7 +32,23 @@ export default {
     padding: 5px;
     box-shadow: inset 0 2px white, inset 0 -2px #bbb, inset 2px 0 #d7d7d7,
 		inset -2px 0 #d7d7d7;
+    position: relative;
 }
+
+.dice-label {
+    position: absolute;
+    top: 12px;
+    left: 45%;
+    transform: translateX(-50%) rotate(-30deg);
+    white-space: nowrap;
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+    color: rgb(72, 72, 255);
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(177, 177, 255);
+}
+
 .face {
     display: grid;
     grid-template-areas:
