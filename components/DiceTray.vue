@@ -7,13 +7,18 @@
             </div>
         </div>
         <div class="row">
-            <Dice v-for="(die, index) in dice" :key="index" :label="die.label" :value="die.value" />
+            <VueDraggableNext class="list-group" :list="dice" group="dice" @change="log">
+                <div class="list-group-item" v-for="(die, index) in dice" :key="index">
+                    <Dice :label="die.label" :value="die.value" />
+                </div>
+            </VueDraggableNext>
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { VueDraggableNext } from 'vue-draggable-next';
 
 export default defineComponent({
     name: 'DiceTray',
@@ -25,6 +30,14 @@ export default defineComponent({
         dice: {
             type: Array as () => Array<{ label: string, value: number }>,
             default: () => []
+        }
+    },
+    components: {
+        VueDraggableNext
+    },
+    methods: {
+        log(event: any) {
+            console.log(event);
         }
     }
 });
