@@ -13,18 +13,18 @@
     </div>
     <div class="row gy-5">
         <div class="col-4">
-            <DiceTray label="Fail" :count="1"/>
+            <DiceTray label="Fail" :dice="failDice"/>
         </div>
         <div class="col-4">
-            <DiceTray label="Success" :count="2"/>
+            <DiceTray label="Success" :dice="successDice"/>
         </div>
         <div class="col-4">
-            <DiceTray label="Crit" :count="3"/>
+            <DiceTray label="Crit" :dice="critDice"/>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <DiceTray label="Roll" :count="4"/>
+            <DiceTray label="Roll" :dice="rollAreaDice"/>
         </div>
     </div>
 </template>
@@ -39,10 +39,38 @@ export default {
     },
     data() {
         return {
-            failDice: [],
-            successDice: [],
-            critDice: [],
-            rollAreaDice: [],
+            failDice: [
+            {
+                    label: '',
+                    value: 1
+                },
+                {
+                    label: '',
+                    value: 2
+                }
+            ],
+            successDice: [
+                {
+                    label: '',
+                    value: 4
+                }
+            ],
+            critDice: [
+                {
+                    label: '',
+                    value: 6
+                }
+            ],
+            rollAreaDice: [
+                {
+                    label: '',
+                    value: 0
+                },
+                {
+                    label: '',
+                    value: 0
+                }
+            ],
             // ... other data properties
         };
     },

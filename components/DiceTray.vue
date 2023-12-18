@@ -3,27 +3,35 @@
         <div class="row">
             <div class="col-12 text-center">
                 <label>{{ label }}</label>:&nbsp;
-                <span>{{ count }}</span>
+                <span>{{ dice.length }}</span>
             </div>
         </div>
         <div class="row">
-            <Dice :count="6"/>
+            <Dice v-for="(die, index) in dice" :key="index" :label="die.label" :value="die.value" />
         </div>
     </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
     name: 'DiceTray',
     props: {
-        label: String,
-        count: Number
+        label: {
+            type: String,
+            default: ""
+        },
+        dice: {
+            type: Array as () => Array<{ label: string, value: number }>,
+            default: () => []
+        }
     }
-}
+});
 </script>
 
 <style scoped>
-.tray {
+div.tray {
     border: 1px solid black;
     background-color: #ccc;
     border-radius: 5px;

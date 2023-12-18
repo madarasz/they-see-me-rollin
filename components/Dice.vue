@@ -1,6 +1,6 @@
 <template>
     <div class="dice face">
-        <span v-for="index in count" :key="index" class="pip"></span>
+        <span v-for="index in value" :key="index" class="pip"></span>
     </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
             type: String,
             default: ''
         },
-        count: {
+        value: {
             type: Number,
             default: 0
         }
